@@ -1,0 +1,29 @@
+button {
+    border: none;
+    background: none;
+    height: 60px;
+    outline: none;
+}
+
+button:focus-visible {
+    outline: none;
+}
+
+button:hover {
+    background:#000000;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+#editor {
+    max-width: 800px;
+    margin: 20px auto;
+    height: 400px;
+    border: 1px solid #000000;
+    padding: 10px;
+}
