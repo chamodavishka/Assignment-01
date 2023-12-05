@@ -23,7 +23,7 @@ button:hover {
 #editor {
     max-width: 800px;
     margin: 20px auto;
-    height: 200px;
+    height: 400px;
     border: 1px solid #000000;
     padding: 10px;
 }

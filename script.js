@@ -45,3 +45,38 @@ function changeTextColor() {
             document.getElementById('editor').style.textAlign ='justify'
         })
     })
+
+var contenthistory = [];
+var currentstep = 0;
+
+contenthistory.push(document.getElementById('editor').innerHTML);
+
+function undo() {
+    if (currentstep >=0) {
+        currentstep--;
+        if (contenthistory[currentstep] !== undefined) {
+            document.getElementById('editor').innerHTML = contenthistory[currentstep];
+        }
+    }
+}
+
+function redo() {
+    if (currentstep < contenthistory.length - 1) {
+        currentstep++;
+        if (contenthistory[currentstep] !== undefined) {
+            document.getElementById('editor').innerHTML = contenthistory[currentstep];
+        }
+    }
+}
+
+document.querySelectorAll('#editor').forEach(function (element) {
+    element.addEventListener('input', function () {
+        console.log('typing');
+        currentstep++;
+        if (currentstep < contenthistory.length) {
+            contenthistory = contenthistory.slice(0, currentstep);
+        }
+
+        contenthistory.push(document.getElementById('editor').innerHTML);
+	});
+});
