@@ -21,3 +21,27 @@ function changeTextColor() {
     // Trigger the color picker dialog
      colorPicker.click();
 }
+
+    document.querySelectorAll('.left').forEach(function (element) {
+        element.addEventListener('click', function () {
+            document.getElementById('editor').style.textAlign ='left'
+        })
+    })
+
+    document.querySelectorAll('.center').forEach(function (element) {
+        element.addEventListener('click', function () {
+            document.getElementById('editor').style.textAlign ='center'
+        })
+    })
+
+    document.querySelectorAll('.right').forEach(function (element) {
+        element.addEventListener('click', function () {
+            document.getElementById('editor').style.textAlign ='right'
+        })
+    })
+
+    document.querySelectorAll('.justify').forEach(function (element) {
+        element.addEventListener('click', function () {
+            document.getElementById('editor').style.textAlign ='justify'
+        })
+    })
